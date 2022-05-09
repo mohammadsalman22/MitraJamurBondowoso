@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth'])->name('dashboard');
+
+// Route::get('/dashboard','DashboardController@index')->name('dashboard');
+
+Route::resource('produk',ProdukController::class);
+
+Route::resource('travel_homestay','TravelHomestayController');
+
+Route::resource('user','UserController');
+
+Route::resource('metode','MetodeController');
+
+Route::resource('riwayat','RiwayatController');
+
+Route::resource('admin', 'UsersController')
+    ->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+
+});
 
 require __DIR__.'/auth.php';
