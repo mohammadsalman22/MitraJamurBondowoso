@@ -19,5 +19,12 @@
                 <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Produk</span>
             </a>
         </li>
+
+        <li class="sidebar-item active">
+            <a class="sidebar-link">
+                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Gallery</span>
+            </a>
+        </li>
+
     </ul>
 </div>
