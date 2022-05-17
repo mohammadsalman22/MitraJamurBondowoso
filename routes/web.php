@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,9 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('backend/dashboard', function () {
+Route::get('backend/home', function () {
     return view('welcome');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('home');
 
 // Route::get('/dashboard','DashboardController@index')->name('dashboard');
 
@@ -29,16 +30,16 @@ Route::resource('backend/produk',ProdukController::class);
 
 Route::resource('backend/gallery',GalleryController::class);
 
-Route::resource('user','UserController');
+Route::resource('backend/dashboard',DashboardController::class);
 
-Route::resource('metode','MetodeController');
+// Route::resource('user','UserController');
 
-Route::resource('riwayat','RiwayatController');
+// Route::resource('riwayat','RiwayatController');
 
-Route::resource('admin', 'UsersController')
-    ->middleware('auth');
-Route::group(['middleware' => 'auth'], function () {
+// Route::resource('admin', 'UsersController')
+//     ->middleware('auth');
+// Route::group(['middleware' => 'auth'], function () {
 
-});
+// });
 
 require __DIR__.'/auth.php';
