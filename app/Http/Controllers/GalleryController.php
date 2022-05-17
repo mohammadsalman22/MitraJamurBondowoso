@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class GalleryController extends Controller
 {
@@ -13,7 +18,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $gallery = Gallery::all();
+        return view('backend.gallery.index')->with('gallery', $gallery)->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
@@ -23,7 +29,10 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        $this->param['subtitle'] = 'Tambah Gallery';
+        $this->param['top_button'] = route('gallery.index');
+
+        return view('backend.gallery.create', $this->param);
     }
 
     /**
@@ -34,7 +43,43 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'gambar'=>'required',
+        ],
+        [
+            'required' => 'Harap isi :attribute',
+        ],
+        [
+            'gambar' => 'Gambar'
+        ]
+        );
+        try{
+
+            if($request->file('gambar') != null) {
+                $folder = 'upload/gallery/'.$request->get('gambar');
+                $file = $request->file('gambar');
+                $filename = date('YmdHis').$file->getClientOriginalName();
+                $path = realpath($folder);
+                if (!($path !== true AND is_dir($path))) {
+                    mkdir($folder, 0755, true);
+                }
+                if ($file->move($folder, $filename)) {
+                    $newGambar = new Gallery;
+                    $newGambar->gambar = $folder.$filename;
+                    $newGambar->save();
+                }
+            }
+
+            return redirect('backend/gallery')->withStatus('Berhasil menambah data');
+        }
+        catch(\Exception $e){
+            return $e->getMessage();
+            return redirect()->back()->withError($e->getMessage());
+        }
+        catch(\Illuminate\Database\QueryException $e){
+            return $e->getMessage();
+            return redirect()->back()->withError($e->getMessage());
+        }
     }
 
     /**
@@ -43,9 +88,9 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Gallery $gallery)
     {
-        //
+        return view('backend.gallery.index',compact('gallery'));
     }
 
     /**
@@ -54,9 +99,10 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($gallery)
     {
-        //
+        $gallery = Gallery::where('id_gambar', $gallery)->first();
+        return view('backend.gallery.edit',compact('gallery'));
     }
 
     /**
@@ -66,9 +112,43 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id_gambar)
+     {
+        $request->validate([
+
+        ]);
+        try{
+            $foto = Gallery::where('id_gambar', $id_gambar)->first()->gambar;
+
+            if($request->file('gambar') != null) {
+                $folder = 'upload/gallery/'.$request->get('gambar');
+                $file = $request->file('gambar');
+                $filename = date('YmdHis').$file->getClientOriginalName();
+                $path = realpath($folder);
+                if (!($path !== true AND is_dir($path))) {
+                    mkdir($folder, 0755, true);
+                }
+                if(file_exists($foto)){
+                    if(File::delete($foto)){
+                        if ($file->move($folder, $filename)) {
+                            DB::table('gallery')->where('id_gambar', '=', $id_gambar)->update([
+                                'gambar' => $folder.$filename
+                            ]);
+                        }
+                    }
+                }
+
+            }
+            return redirect()->route('gallery.index')->with('Berhasil', 'Data Gallery berhasil Diubah');
+        }
+        catch(\Exception $e){
+            return $e->getMessage();
+            return redirect()->back()->withError($e->getMessage());
+        }
+        catch(\Illuminate\Database\QueryException $e){
+            return $e->getMessage();
+            return redirect()->back()->withError($e->getMessage());
+        }
     }
 
     /**
@@ -77,8 +157,27 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_gambar)
     {
-        //
+        try{
+            $foto = Gallery::where('id_gambar', $id_gambar)->first()->gambar;
+            if($foto != null){
+                if(file_exists($foto)){
+                    if(File::delete($foto)){
+                        DB::table('gallery')->where('id_gambar', $id_gambar)->delete();
+                    }
+                }
+            }
+            return redirect()->route('gallery.index')->with('Berhasil', 'Data gallery berhasil Dihapus');
+
+        }
+        catch(\Exception $e){
+            return $e->getMessage();
+            //return redirect()->back()->withError($e->getMessage());
+        }
+        catch(\Illuminate\Database\QueryException $e){
+            return $e->getMessage();
+            //return redirect()->back()->withError($e->getMessage());
+        }
     }
 }

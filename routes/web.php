@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,15 +19,15 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/dashboard', function () {
+Route::get('backend/dashboard', function () {
     return view('welcome');
 })->middleware(['auth'])->name('dashboard');
 
 // Route::get('/dashboard','DashboardController@index')->name('dashboard');
 
-Route::resource('produk',ProdukController::class);
+Route::resource('backend/produk',ProdukController::class);
 
-Route::resource('travel_homestay','TravelHomestayController');
+Route::resource('backend/gallery',galleryController::class);
 
 Route::resource('user','UserController');
 

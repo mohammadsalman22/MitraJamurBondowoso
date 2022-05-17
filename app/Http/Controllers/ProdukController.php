@@ -87,7 +87,7 @@ class ProdukController extends Controller
                 }
             }
 
-            return redirect('produk')->withStatus('Berhasil menambah data');
+            return redirect('backend/produk')->withStatus('Berhasil menambah data');
         }
         catch(\Exception $e){
             return $e->getMessage();
