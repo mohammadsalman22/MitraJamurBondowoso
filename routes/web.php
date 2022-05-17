@@ -27,7 +27,7 @@ Route::get('backend/dashboard', function () {
 
 Route::resource('backend/produk',ProdukController::class);
 
-Route::resource('backend/gallery',galleryController::class);
+Route::resource('backend/gallery',GalleryController::class);
 
 Route::resource('user','UserController');
 
