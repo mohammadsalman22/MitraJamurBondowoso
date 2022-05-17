@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::resource('backend/produk',ProdukController::class);
 Route::resource('backend/gallery',GalleryController::class);
 
 Route::resource('backend/dashboard',DashboardController::class);
+
+Route::resource('backend/feedback',FeedbackController::class);
 
 // Route::resource('user','UserController');
 

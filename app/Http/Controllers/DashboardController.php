@@ -118,7 +118,6 @@ class DashboardController extends Controller
                         }
                     }
                 }
-
             }
 
             return redirect()->route('dashboard.index')->with('Berhasil', 'Data Dashboard berhasil Diubah');
