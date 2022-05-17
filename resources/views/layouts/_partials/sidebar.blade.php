@@ -37,5 +37,11 @@
                 <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Feedback</span>
             </a>
         </li>
+
+        <li class="sidebar-item {{ request()->segment(2) == 'kontak' ? 'active' : '' }}">
+            <a class="sidebar-link" href="{{ route('kontak.index') }}">
+                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Kontak</span>
+            </a>
+        </li>
     </ul>
 </div>

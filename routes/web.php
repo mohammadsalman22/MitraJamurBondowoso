@@ -5,6 +5,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\KontakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::resource('backend/gallery',GalleryController::class);
 Route::resource('backend/dashboard',DashboardController::class);
 
 Route::resource('backend/feedback',FeedbackController::class);
+
+Route::resource('backend/kontak',KontakController::class);
 
 // Route::resource('user','UserController');
 
