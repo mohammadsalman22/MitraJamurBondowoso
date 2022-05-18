@@ -16,32 +16,27 @@
 
         <li class="sidebar-item {{ request()->segment(2) == 'produk' ? 'active' : '' }}">
             <a class="sidebar-link" href="{{ route('produk.index') }}">
-                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Produk</span>
+                <i class="align-middle" data-feather="shopping-cart"></i> <span class="align-middle">Produk</span>
             </a>
         </li>
 
         <li class="sidebar-item {{ request()->segment(2) == 'gallery' ? 'active' : '' }}">
             <a class="sidebar-link" href="{{ route('gallery.index') }}">
-                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Gallery</span>
+                <i class="align-middle" data-feather="image"></i> <span class="align-middle">Gallery</span>
             </a>
         </li>
 
         <li class="sidebar-item {{ request()->segment(2) == 'dashboard' ? 'active' : '' }}">
             <a class="sidebar-link" href="{{ route('dashboard.edit', 1) }}">
-                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                <i class="align-middle" data-feather="home"></i> <span class="align-middle">Dashboard</span>
             </a>
         </li>
 
         <li class="sidebar-item {{ request()->segment(2) == 'feedback' ? 'active' : '' }}">
             <a class="sidebar-link" href="{{ route('feedback.index') }}">
-                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Feedback</span>
+                <i class="align-middle" data-feather="inbox"></i> <span class="align-middle">Feedback</span>
             </a>
         </li>
 
-        <li class="sidebar-item {{ request()->segment(2) == 'kontak' ? 'active' : '' }}">
-            <a class="sidebar-link" href="{{ route('kontak.index') }}">
-                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Kontak</span>
-            </a>
-        </li>
     </ul>
 </div>

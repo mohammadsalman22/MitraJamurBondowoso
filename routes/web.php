@@ -5,7 +5,8 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
-use App\Http\Controllers\KontakController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,23 +23,24 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('backend/home', function () {
-    return view('welcome');
-})->middleware(['auth'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('backend')->group(function () {
+        Route::get('/home',[HomeController::class,'index'])->name('home');
 
-// Route::get('/dashboard','DashboardController@index')->name('dashboard');
+        Route::resource('/profile',UserController::class);
 
-Route::resource('backend/produk',ProdukController::class);
+        Route::resource('/produk',ProdukController::class);
 
-Route::resource('backend/gallery',GalleryController::class);
+        Route::resource('/gallery',GalleryController::class);
 
-Route::resource('backend/dashboard',DashboardController::class);
+        Route::resource('/dashboard',DashboardController::class);
 
-Route::resource('backend/feedback',FeedbackController::class);
+        Route::resource('/feedback',FeedbackController::class);
 
-Route::resource('backend/kontak',KontakController::class);
+    });
+});
 
-// Route::resource('user','UserController');
+
 
 // Route::resource('riwayat','RiwayatController');
 

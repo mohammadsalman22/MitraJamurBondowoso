@@ -56,37 +56,43 @@
                                     <label for="whatsapp">Nomer Whatsapp</label>
                                     <input type="number" class="form-control mb-3" id="whatsapp" name="whatsapp"
                                         value="{{ $dashboard->whatsapp }}"
-                                        placeholder="Harap di isi dengan nomer whatsapp dengan benar dan Harus di awali dengan Angka 62">
+                                        placeholder="Harap di isi dengan nomer whatsapp dengan benar dan Harus di awali dengan Angka 62"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="instagram">Link Instagram</label>
                                     <input type="text" class="form-control mb-3" id="instagram" name="instagram"
                                         value="{{ $dashboard->instagram }}"
-                                        placeholder="Harap di isi link profile instagram dengan benar contoh : https://www.instagram.com/syair_devinci/">
+                                        placeholder="Harap di isi link profile instagram dengan benar contoh : https://www.instagram.com/syair_devinci/"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="twitter">Link Twitter</label>
-                                    <input type="number" class="form-control mb-3" id="twitter" name="twitter"
+                                    <input type="text" class="form-control mb-3" id="twitter" name="twitter"
                                         value="{{ $dashboard->twitter }}"
-                                        placeholder="Harap di isi link profile twitter dengan benar contoh : https://twitter.com/SyairV">
+                                        placeholder="Harap di isi link profile twitter dengan benar contoh : https://twitter.com/SyairV"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Link Facebook</label>
-                                    <input type="number" class="form-control mb-3" id="facebook" name="facebook"
+                                    <input type="text" class="form-control mb-3" id="facebook" name="facebook"
                                         value="{{ $dashboard->facebook }}"
-                                        placeholder="Harap di isi link profile facebook dengan benar contoh : https://www.facebook.com/Mitra-Jamur-Bondowoso-593256841159383">
+                                        placeholder="Harap di isi link profile facebook dengan benar contoh : https://www.facebook.com/Mitra-Jamur-Bondowoso-593256841159383"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="youtube">Link Youtube</label>
-                                    <input type="number" class="form-control mb-3" id="youtube" name="youtube"
+                                    <input type="text" class="form-control mb-3" id="youtube" name="youtube"
                                         value="{{ $dashboard->youtube }}"
-                                        placeholder="Harap di isi link profile youtube dengan benar contoh : https://www.youtube.com/channel/UCCLLUq6aN0wXKeabf9tRb5Q">
+                                        placeholder="Harap di isi link profile youtube dengan benar contoh : https://www.youtube.com/channel/UCCLLUq6aN0wXKeabf9tRb5Q"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="gmail">Alamat Gmail</label>
-                                    <input type="number" class="form-control mb-3" id="gmail" name="gmail"
+                                    <input type="text" class="form-control mb-3" id="gmail" name="gmail"
                                         value="{{ $dashboard->gmail }}"
-                                        placeholder="Harap di isi link profile youtube dengan benar contoh : syairadirawan96@gmail.com">
+                                        placeholder="Harap di isi link profile youtube dengan benar contoh : syairadirawan96@gmail.com"
+                                        required>
                                 </div>
                                 <input type="submit" value="simpan" class="btn btn-primary"></td>
                             </form>

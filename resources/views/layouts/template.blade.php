@@ -13,12 +13,14 @@
 
         <div class="main">
             @include('layouts._partials.topbar')
-
+            @include('layouts._partials.modal')
             @yield('content')
 
             <footer class="footer">
                 @include('layouts._partials.footer')
             </footer>
+
+
         </div>
     </div>
 
