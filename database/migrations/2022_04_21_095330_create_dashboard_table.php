@@ -20,6 +20,11 @@ class CreateDashboardTable extends Migration
             $table->string('logo', 255)->nullable();
             $table->text('deskripsi');
             $table->string('whatsapp', 255);
+            $table->string('instagram', 255);
+            $table->string('twitter', 255);
+            $table->string('facebook', 255);
+            $table->string('youtube', 255);
+            $table->string('gmail', 255);
             $table->timestamps();
         });
     }

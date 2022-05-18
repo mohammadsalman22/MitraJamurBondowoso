@@ -38,7 +38,17 @@ class DatabaseSeeder extends Seeder
 
                     'deskripsi' => 'Website ini adalaha Website Profile',
 
-                    'whatsapp' => '6281252600127'
+                    'whatsapp' => '6281252600127',
+
+                    'instagram' => 'https://www.instagram.com/syair_devinci/',
+
+                    'twitter' => 'https://twitter.com/SyairV',
+
+                    'facebook' => 'https://www.facebook.com/Mitra-Jamur-Bondowoso-593256841159383',
+
+                    'youtube' => 'https://www.youtube.com/channel/UCCLLUq6aN0wXKeabf9tRb5Q',
+
+                    'gmail' => 'syairadirawan96@gmail.com'
                 ]
             );
         }
