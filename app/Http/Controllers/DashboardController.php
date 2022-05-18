@@ -117,6 +117,12 @@ class DashboardController extends Controller
                             ]);
                         }
                     }
+                } else{
+                    if ($file->move($folder, $filename)) {
+                            DB::table('dashboard')->update([
+                                'logo' => $folder.$filename
+                            ]);
+                        }
                 }
             }
 

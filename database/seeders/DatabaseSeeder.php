@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Dashboard;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        {
+            User::create(
+                [
+
+                    'name' => 'Admin',
+
+                    'email' => 'admin@mail.com',
+
+                    'password' => bcrypt('admin123'),
+                ]
+            );
+
+            Dashboard::create(
+                [
+
+                    'nama' => 'Mitra Jamur Bondowoso',
+
+                    'alamat' => 'Bondowoso',
+
+                    'logo' => 'backend/img/photos/unsplash-3.jpg',
+
+                    'deskripsi' => 'Website ini adalaha Website Profile',
+
+                    'whatsapp' => '6281252600127'
+                ]
+            );
+        }
     }
 }

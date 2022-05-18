@@ -44,16 +44,24 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'nama'=>'required|min:6',
             'gambar'=>'required',
         ],
         [
             'required' => 'Harap isi :attribute',
+            'deskripsi.required' => 'Isi Deskripsi',
+            'min' => 'Panjang karakter minimal 6',
         ],
         [
+            'nama' => 'Nama Gambar',
             'gambar' => 'Gambar'
         ]
         );
         try{
+            $data = array(
+                'nama' => $request->get('nama'),
+            );
+            $lastId = DB::table('gallery')->insertGetId($data, 'id_gambar');
 
             if($request->file('gambar') != null) {
                 $folder = 'upload/gallery/'.$request->get('gambar');
@@ -64,9 +72,9 @@ class GalleryController extends Controller
                     mkdir($folder, 0755, true);
                 }
                 if ($file->move($folder, $filename)) {
-                    $newGambar = new Gallery;
-                    $newGambar->gambar = $folder.$filename;
-                    $newGambar->save();
+                    DB::table('gallery')->where('id_gambar', '=', $lastId)->update([
+                        'gambar' => $folder.$filename
+                    ]);
                 }
             }
 
@@ -113,13 +121,15 @@ class GalleryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id_gambar)
-     {
+    {
         $request->validate([
 
         ]);
         try{
             $foto = Gallery::where('id_gambar', $id_gambar)->first()->gambar;
-
+            DB::table('gallery')->where('id_gambar', $id_gambar)->update([
+            'nama' => $request->get('nama')
+        ]);
             if($request->file('gambar') != null) {
                 $folder = 'upload/gallery/'.$request->get('gambar');
                 $file = $request->file('gambar');
@@ -139,7 +149,7 @@ class GalleryController extends Controller
                 }
 
             }
-            return redirect()->route('gallery.index')->with('Berhasil', 'Data Gallery berhasil Diubah');
+            return redirect()->route('gallery.index')->with('Berhasil', 'Data gallery berhasil Diubah');
         }
         catch(\Exception $e){
             return $e->getMessage();
@@ -168,7 +178,7 @@ class GalleryController extends Controller
                     }
                 }
             }
-            return redirect()->route('gallery.index')->with('Berhasil', 'Data gallery berhasil Dihapus');
+            return redirect()->route('gallery.index')->with('Berhasil', 'Data Gallery berhasil Dihapus');
 
         }
         catch(\Exception $e){

@@ -30,6 +30,11 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
+                                    <label for="nama">Nama Gambar</label>
+                                    <input type="text" class="form-control mb-3" id="nama" value="{{ $gallery->nama }}"
+                                        name="nama">
+                                </div>
+                                <div class="form-group">
                                     <label for="gambar">Gambar</label>
                                     <input type="file" class="form-control-file mb-3" id="gambar" name="gambar"
                                         value="{{ $gallery->gambar }}"><br>

@@ -26,6 +26,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Nama</th>
                                             <th>Gambar</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -34,6 +35,7 @@
                                         @foreach ($gallery as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $item->nama }}</td>
                                                 <td>
                                                     <a data-toggle="modal" class="showDetailData"
                                                         data-target=".modal-show-detail"

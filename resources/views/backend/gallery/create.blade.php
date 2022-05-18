@@ -28,6 +28,14 @@
                         <div class="card-body">
                             <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <div class="form-group">
+                                    <label for="nama">Nama Gambar</label>
+                                    <input type="text" class="form-control mb-3" id="nama"
+                                        placeholder="Masukkan Nama Gambar" name="nama">
+                                    @error('nama')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
                                 <div class=" form-group">
                                     <label for="gambar">Gambar</label>
                                     <input type="file" class="form-control-file mb-3" id="gambar" name="gambar">
