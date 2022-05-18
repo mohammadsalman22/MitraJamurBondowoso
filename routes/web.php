@@ -24,8 +24,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::prefix('backend')->group(function () {
-        Route::get('/home',[HomeController::class,'index'])->name('home');
+    Route::prefix('administrator')->group(function () {
+        Route::get('/',[HomeController::class,'index'])->name('home');
 
         Route::resource('/profile',UserController::class);
 
