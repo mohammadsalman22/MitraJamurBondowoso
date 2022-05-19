@@ -22,20 +22,20 @@
                                         @method('PUT')
                                         <div class="mb-3">
                                             <label class="form-label">Name</label>
-                                            <input class="form-control form-control-lg" type="text" name="name"
+                                            <input class="form-control form-control-lg" id="name" type="text" name="name"
                                                 placeholder="Harap Masukkan Name Anda" value="{{ $users->name }}"
                                                 required />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Email</label>
-                                            <input class="form-control form-control-lg" type="email" name="email"
+                                            <input class="form-control form-control-lg" id="email" type="email" name="email"
                                                 placeholder="Harap Masukkan Email Anda" value="{{ $users->email }}"
                                                 required />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Password</label>
-                                            <input class="form-control form-control-lg" type="password" name="password"
-                                                placeholder="Harap Masukkan Password Anda" />
+                                            <input class="form-control form-control-lg" id="password" type="password"
+                                                name="password" placeholder="Harap Masukkan Password Anda" />
                                         </div>
                                         <div class="text-center mt-3">
                                             <button type="submit" value="simpan"

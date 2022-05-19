@@ -7,6 +7,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Frontend\DashboardController as FrontendDashboardController;
+use App\Http\Controllers\Frontend\GalleryController as FrontendGalleryController;
+use App\Http\Controllers\Frontend\KontakController as FrontendKontakController;
+use App\Http\Controllers\Frontend\ProdukController as FrontendProdukController;
+use App\Http\Controllers\Frontend\TentangController as FrontendTentangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +24,19 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
+Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
+
+Route::prefix('produk')->group(function(){
+    Route::get('/', [FrontendProdukController::class,'index'])->name('produk');
+    Route::get('/detail-produk', [FrontendProdukController::class,'index'])->name('produk');
+
 });
+
+Route::get('/galery', [FrontendGalleryController::class,'index'])->name('gallery');
+
+Route::get('/tentang', [FrontendTentangController::class,'index'])->name('tentang');
+
+Route::get('/kontak', [FrontendKontakController::class,'index'])->name('kontak');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('administrator')->group(function () {
