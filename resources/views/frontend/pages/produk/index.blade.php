@@ -52,6 +52,7 @@
     <!-- end produk -->
 
     <div class="container-fluid d-flex justify-content-end fixed-bottom p-4 whatsapp">
-        <a href="https://api.whatsapp.com/send?phone=" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" class="btn btn-success"><i
+                class="fab fa-whatsapp"></i></a>
     </div>
 @endsection

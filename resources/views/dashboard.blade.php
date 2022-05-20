@@ -170,11 +170,11 @@
 
     <!-- produk -->
     <div class="section-produk my-6 position-relative" style="background-image: url('{{ asset('frontend/img/galeri/back-jamur.png') }}');
-                                                                                    background-repeat: no-repeat;
-                                                                                    background-size: cover;
-                                                                                    background-position: center;
-                                                                                    backdrop-filter: blur(5px);
-                                                                                    height:600px;">
+                                                                                        background-repeat: no-repeat;
+                                                                                        background-size: cover;
+                                                                                        background-position: center;
+                                                                                        backdrop-filter: blur(5px);
+                                                                                        height:600px;">
         <div class="container">
             <div class="text-center pt-5">
                 <h4 style="font-size: 28px;">Coba Produk Unggulan Kami</h4>
@@ -292,6 +292,7 @@
     </section>
     <!-- end saran -->
     <div class="container-fluid d-flex justify-content-end fixed-bottom p-4 whatsapp">
-        <a href="https://api.whatsapp.com/send?phone=" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" class="btn btn-success"><i
+                class="fab fa-whatsapp"></i></a>
     </div>
 @endsection

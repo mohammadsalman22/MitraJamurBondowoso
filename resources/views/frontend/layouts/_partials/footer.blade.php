@@ -25,8 +25,8 @@
                     </a>
                 </div>
                 <div class="p-2">
-                    <a href="{{ $dashboard->whatsapp }}">
-                        <img src="{{ asset('frontend/img/icon/wa fix.svg') }}" alt="">
+                    <a href="https://wa.me/{{ $dashboard->whatsapp }}">
+                        <img src="{{ asset('frontend/img/icon/icon-whatsapp.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
@@ -44,17 +44,19 @@
         <div class="col-md-4 d-flex justify-content-end footer-sosmed">
             <div class="d-flex flex-column">
                 <div class="mb-3">
-                    <a href="">
-                        <i class="fa-solid fa-phone"></i> <span class="px-2">+62 82244980345</span>
+                    <a href="tel:+{{ $dashboard->whatsapp }}">
+                        <i class="fa-solid fa-phone"></i> <span
+                            class="px-2">+{{ $dashboard->whatsapp }}</span>
                     </a>
                 </div>
                 <div class="mb-3">
-                    <a href="">
-                        <i class="fa-solid fa-envelope"></i> <span class="px-2">mitrajamur@gmail.com</span>
+                    <a href="mailto:{{ $dashboard->gmail }}">
+                        <i class="fa-solid fa-envelope"></i> <span
+                            class="px-2">{{ $dashboard->gmail }}</span>
                     </a>
                 </div>
                 <div class="mb-3">
-                    <a href="">
+                    <a href="https://goo.gl/maps/DwHwTDkdvjTWxAHa9">
                         <i class="fa-solid fa-location-dot"></i> <span class="px-2">Bondowoso</span>
                     </a>
                 </div>

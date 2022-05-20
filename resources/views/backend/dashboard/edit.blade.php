@@ -36,7 +36,8 @@
                                     <label for="alamat">Alamat</label>
                                     <input type="text" class="form-control mb-3" id="alamat"
                                         value="{{ $dashboard->alamat }}" name="alamat"
-                                        placeholder="Harap diisi dengan Alamat dengan benar" required>
+                                        placeholder="Harap diisi dengan Alamat dengan benar contoh : https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.8557921272936!2d113.8707379147795!3d-8.013803594228966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x60ec956105b54ae5!2zOMKwMDAnNDkuNyJTIDExM8KwNTInMjIuNSJF!5e0!3m2!1sid!2sid!4v1653060137830!5m2!1sid!2sid"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="logo">Logo</label>
@@ -56,7 +57,7 @@
                                     <label for="whatsapp">Nomer Whatsapp</label>
                                     <input type="number" class="form-control mb-3" id="whatsapp" name="whatsapp"
                                         value="{{ $dashboard->whatsapp }}"
-                                        placeholder="Harap di isi dengan nomer whatsapp dengan benar dan Harus di awali dengan Angka 62"
+                                        placeholder="Harap di isi dengan nomer whatsapp dengan benar dan Harus di awali dengan Angka 62 contoh : 6282244112791"
                                         required>
                                 </div>
                                 <div class="form-group">
