@@ -73,3 +73,5 @@ const swiperGaleri = new Swiper('.swiperGaleri', {
     el: '.swiper-scrollbar',
   },
 });
+
+// galeri

@@ -337,12 +337,29 @@ p{
 .frontside .card .card-body img {
     width: 100%;
     height: max-content;
-
+   
 }
 
 /* end produk */
+
+/* galeri */
+.section-galeri{
+    /* padding: 40px; */
+    min-height: 100vh;
+}
+.section-galeri .row > div {
+    padding: 2px;
+}
+.section-galeri .lightbox img {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+
+/* end galeri */
 /* Small devices (landscape phones, 576px and up) */
-@media (max-width: 762px) {
+@media (max-width: 762px) { 
     .section-services{
         margin-top:400px;
     }
@@ -367,21 +384,21 @@ p{
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 768px) { 
 
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 992px) { 
 
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) { 
 
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
+@media (min-width: 1400px) { 
 
 }

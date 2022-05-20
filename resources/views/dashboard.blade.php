@@ -170,17 +170,18 @@
 
     <!-- produk -->
     <div class="section-produk my-6 position-relative" style="background-image: url('{{ asset('frontend/img/galeri/back-jamur.png') }}');
-                                                            background-repeat: no-repeat;
-                                                            background-size: cover;
-                                                            background-position: center;
-                                                            backdrop-filter: blur(5px);">
+                                                                                    background-repeat: no-repeat;
+                                                                                    background-size: cover;
+                                                                                    background-position: center;
+                                                                                    backdrop-filter: blur(5px);
+                                                                                    height:600px;">
         <div class="container">
             <div class="text-center pt-5">
                 <h4 style="font-size: 28px;">Coba Produk Unggulan Kami</h4>
                 <p>Sekarang Anda akan mendapatkan sensasi dengan Cita Rasa SPESIAL dari Produk Jamur <br> Unggulan Kami</p>
             </div>
             <div class="d-flex justify-content-center produk-button">
-                <a href="" class="btn btn-light">Lihat Produk Kami</a>
+                <a href="{{ route('produk') }}" class="btn btn-light">Lihat Produk Kami</a>
             </div>
         </div>
     </div>
@@ -258,21 +259,25 @@
                                 </div>
                             </div>
                             <div class="col-md-6 align-self-center">
-                                <form action="">
+                                <form action="{{ route('feedback-front') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
 
                                     <div class="form-group row">
                                         <div class="col-md-6 mb-4">
-                                            <input type="text" placeholder="Nama Depan" class="form-control">
+                                            <input type="text" placeholder="Nama Depan" id="nama_depan" name="nama_depan"
+                                                class="form-control">
                                         </div>
                                         <div class="col-md-6 mb-4">
-                                            <input type="text" placeholder="Nama Belakang" class="form-control">
+                                            <input type="text" placeholder="Nama Belakang" id="nama_belakang"
+                                                name="nama_belakang" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group mb-4">
-                                        <input type="text" placeholder="Email anda" class="form-control">
+                                        <input type="email" placeholder="Email anda" id="email" name="email"
+                                            class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <textarea name="" class="form-control" placeholder="Saran" id="" cols="30" rows="10"></textarea>
+                                        <textarea class="form-control" placeholder="Saran" id="saran" name="saran" cols="30" rows="10"></textarea>
                                     </div>
                                     <div class="d-flex justify-content-end mt-4">
                                         <button type="submit" class="btn btn-primary"> Kirim </button>

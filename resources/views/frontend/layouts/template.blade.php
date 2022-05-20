@@ -23,7 +23,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- swipper js -->
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<!-- galeri -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <!-- custom-js -->
+<script>
+    baguetteBox.run('.section-galeri');
+</script>
 <script src="{{ asset('frontend/js/custom.js') }}"></script>
 
 </html>

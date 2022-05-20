@@ -1,7 +1,7 @@
 @extends('frontend.layouts.template')
 @section('frontend.content')
     <!-- produk -->
-    <div class="section-produk my-6">
+    <div class="section-produk">
         <div class="breadcrumb-produk text-center">
             <h5 class="">Produk Kami</h5>
         </div>

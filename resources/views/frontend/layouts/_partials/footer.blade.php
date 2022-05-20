@@ -26,12 +26,17 @@
                 </div>
                 <div class="p-2">
                     <a href="{{ $dashboard->whatsapp }}">
-                        <img src="{{ asset('frontend/img/icon/icon-whatsapp.svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/wa fix.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
                     <a href="{{ $dashboard->youtube }}">
                         <img src="{{ asset('frontend/img/icon/icon-youtube.svg') }}" alt="">
+                    </a>
+                </div>
+                <div class="p-2">
+                    <a href="{{ $dashboard->twitter }}">
+                        <img src="{{ asset('frontend/img/icon/tw fix.svg') }}" alt="">
                     </a>
                 </div>
             </div>

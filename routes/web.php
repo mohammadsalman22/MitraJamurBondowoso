@@ -26,11 +26,13 @@ use App\Http\Controllers\Frontend\TentangController as FrontendTentangController
 
 Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
 
+Route::post('/feedback-front', [FrontendDashboardController::class, 'store'])->name('feedback-front');
+
 Route::get('/produk', [FrontendProdukController::class,'index'])->name('produk');
 
 Route::get('/produk/detail-produk/{slug}', [FrontendProdukController::class,'detail'])->name('detail-produk');
 
-Route::get('/galery', [FrontendGalleryController::class,'index'])->name('gallery');
+Route::get('/gallery', [FrontendGalleryController::class,'index'])->name('gallery');
 
 Route::get('/tentang', [FrontendTentangController::class,'index'])->name('tentang');
 
