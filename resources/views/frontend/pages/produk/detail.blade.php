@@ -29,7 +29,8 @@
                                     <h4> {{ $produk->harga }}/Log</h4>
 
                                 </div>
-                                <a href="" class="btn btn-success w-100 my-5">Pesan sekarang</a>
+                                <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}&text=Halo%2C%20Cak%20Syair%0ASaya%20Tertarik%20Dengan%20Produk%20{{ $produk->nama }}"
+                                    class="btn btn-success w-100 my-5">Pesan sekarang</a>
                         </div>
                     </div>
                 </div>
