@@ -72,7 +72,7 @@ class FeedbackController extends Controller
 
             $newFeedback->save();
 
-            return redirect('backend/feedback')->withStatus('Berhasil menyimpan data.');
+            return redirect('administrator/feedback')->withStatus('Berhasil menyimpan data.');
         }
         catch(\Exception $e){
             return redirect()->back()->withError($e->getMessage());

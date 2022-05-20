@@ -13,23 +13,23 @@
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->segment(2) == '' ? 'active' : '' }}" aria-current="page"
+                    <a class="nav-link {{ request()->segment(1) == '' ? 'active' : '' }}" aria-current="page"
                         href="{{ route('dashboard') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->segment(2) == 'produk' ? 'active' : '' }}" aria-current="page"
-                        href="#">Produk</a>
+                    <a class="nav-link {{ request()->segment(1) == 'produk' ? 'active' : '' }}" aria-current="page"
+                        href="{{ route('produk') }}">Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->segment(2) == 'gallery' ? 'active' : '' }}" aria-current="page"
+                    <a class="nav-link {{ request()->segment(1) == 'gallery' ? 'active' : '' }}" aria-current="page"
                         href="{{ route('gallery') }}">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->segment(2) == 'tentang' ? 'active' : '' }}" aria-current="page"
+                    <a class="nav-link {{ request()->segment(1) == 'tentang' ? 'active' : '' }}" aria-current="page"
                         href="{{ route('tentang') }}">Tentang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->segment(2) == 'kontak' ? 'active' : '' }}" aria-current="page"
+                    <a class="nav-link {{ request()->segment(1) == 'kontak' ? 'active' : '' }}" aria-current="page"
                         href="{{ route('kontak') }}">Kontak</a>
                 </li>
             </ul>

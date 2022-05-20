@@ -53,7 +53,7 @@ class UserController extends Controller
         $array['password'] = bcrypt($array['password']);
 
         $users = User::create($array);
-        return redirect('backend/profile')->withStatus('Berhasil menambah data');
+        return redirect('administrator/profile')->withStatus('Berhasil menambah data');
     }
 
     /**

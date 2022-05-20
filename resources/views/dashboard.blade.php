@@ -7,19 +7,12 @@
             <div class="swiper swiperBanner">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="{{ asset('frontend/img/sliders/slider-01.jpg') }}" class="" alt=""
-                            srcset="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{{ asset('frontend/img/sliders/slider-02.jpg') }}" class="" alt=""
-                            srcset="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{{ asset('frontend/img/sliders/slider-02.jpg') }}" class="" alt=""
-                            srcset="">
-                    </div>
+                    @foreach ($agallery as $item)
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="{{ $item->gambar }}" class="" alt="" srcset="">
+                        </div>
+                    @endforeach
                 </div>
 
                 <!-- If we need navigation buttons -->
@@ -177,10 +170,10 @@
 
     <!-- produk -->
     <div class="section-produk my-6 position-relative" style="background-image: url('{{ asset('frontend/img/galeri/back-jamur.png') }}');
-                                    background-repeat: no-repeat;
-                                    background-size: cover;
-                                    background-position: center;
-                                    backdrop-filter: blur(5px);">
+                                                            background-repeat: no-repeat;
+                                                            background-size: cover;
+                                                            background-position: center;
+                                                            backdrop-filter: blur(5px);">
         <div class="container">
             <div class="text-center pt-5">
                 <h4 style="font-size: 28px;">Coba Produk Unggulan Kami</h4>
@@ -207,15 +200,10 @@
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('frontend/img/galeri/galeri-1.jpg') }}" class="img-fluid"
-                                            alt=""></div>
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('frontend/img/galeri/galeri-2.jpg') }}" class="img-fluid"
-                                            alt=""></div>
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('frontend/img/galeri/galeri-3.jpg') }}" class="img-fluid"
-                                            alt=""></div>
+                                    @foreach ($ogallery as $item)
+                                        <div class="swiper-slide"><img src="{{ $item->gambar }}" class="img-fluid"
+                                                alt=""></div>
+                                    @endforeach
                                 </div>
                                 <!-- If we need pagination -->
                                 <div class="swiper-pagination"></div>

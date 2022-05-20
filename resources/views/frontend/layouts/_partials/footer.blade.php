@@ -15,13 +15,23 @@
                     </a>
                 </div>
                 <div class="p-2">
-                    <a href="">
+                    <a href="mailto:{{ $dashboard->gmail }}">
                         <img src="{{ asset('frontend/img/icon/icon-email.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
                     <a href="{{ $dashboard->facebook }}">
                         <img src="{{ asset('frontend/img/icon/icon-facebook.svg') }}" alt="">
+                    </a>
+                </div>
+                <div class="p-2">
+                    <a href="{{ $dashboard->whatsapp }}">
+                        <img src="{{ asset('frontend/img/icon/icon-whatsapp.svg') }}" alt="">
+                    </a>
+                </div>
+                <div class="p-2">
+                    <a href="{{ $dashboard->youtube }}">
+                        <img src="{{ asset('frontend/img/icon/icon-youtube.svg') }}" alt="">
                     </a>
                 </div>
             </div>

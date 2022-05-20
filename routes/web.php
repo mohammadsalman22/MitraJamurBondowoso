@@ -26,11 +26,9 @@ use App\Http\Controllers\Frontend\TentangController as FrontendTentangController
 
 Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
 
-Route::prefix('produk')->group(function(){
-    Route::get('/', [FrontendProdukController::class,'index'])->name('produk');
-    Route::get('/detail-produk', [FrontendProdukController::class,'index'])->name('produk');
+Route::get('/produk', [FrontendProdukController::class,'index'])->name('produk');
 
-});
+Route::get('/produk/detail-produk/{slug}', [FrontendProdukController::class,'detail'])->name('detail-produk');
 
 Route::get('/galery', [FrontendGalleryController::class,'index'])->name('gallery');
 

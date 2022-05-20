@@ -16,59 +16,36 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="mainflip">
-                            <div class="frontside">
-                                <div class="card shadow p-3 mb-5 bg-body rounded">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Jamur Hias</h5>
-                                        <img class=" img-fluid" src="assets/img/galeri/produk-1.jpg" alt="card image">
+                @foreach ($produk as $item)
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside">
+                                    <div class="card shadow p-3 mb-5 bg-body rounded">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">{{ $item->nama }}</h5>
+                                            <img class=" img-fluid" src="{{ $item->gambar }}" alt="card image">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <div class="bg-light p-2 mb-3">
-                                            <h5 class="card-title">Jamur Hias</h5>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <div class="bg-light p-2 mb-3">
+                                                <h5 class="card-title">{{ $item->nama }}</h5>
+                                            </div>
+                                            <img class=" img-fluid" src="{{ $item->gambar }}" alt="card image">
+                                            <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
+                                            <a href="{{ url('produk/detail-produk/' . $item->slug) }}"
+                                                class="btn btn-primary mt-4 text-white">Lihat
+                                                produk</a>
                                         </div>
-                                        <img class=" img-fluid" src="assets/img/galeri/produk-1.jpg" alt="card image">
-                                        <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
-                                        <a href="detail-produk.html" class="btn btn-primary mt-4 text-white">Lihat
-                                            produk</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="mainflip">
-                            <div class="frontside">
-                                <div class="card shadow p-3 mb-5 bg-body rounded">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Jamur Hias</h5>
-                                        <img class=" img-fluid" src="assets/img/galeri/produk-1.jpg" alt="card image">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <div class="bg-light p-2 mb-3">
-                                            <h5 class="card-title">Jamur Hias</h5>
-                                        </div>
-                                        <img class=" img-fluid" src="assets/img/galeri/produk-1.jpg" alt="card image">
-                                        <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
-                                        <a href="" class="btn btn-primary mt-4 text-white">Lihat produk</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

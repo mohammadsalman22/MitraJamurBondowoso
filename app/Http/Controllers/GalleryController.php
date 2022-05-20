@@ -78,7 +78,7 @@ class GalleryController extends Controller
                 }
             }
 
-            return redirect('backend/gallery')->withStatus('Berhasil menambah data');
+            return redirect('administrator/gallery')->withStatus('Berhasil menambah data');
         }
         catch(\Exception $e){
             return $e->getMessage();
