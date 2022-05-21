@@ -16,17 +16,17 @@
                 </div>
                 <div class="p-2">
                     <a href="mailto:{{ $dashboard->gmail }}">
-                        <img src="{{ asset('frontend/img/icon/icon-email.svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/email.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
                     <a href="{{ $dashboard->facebook }}">
-                        <img src="{{ asset('frontend/img/icon/icon-facebook.svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/fb.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
                     <a href="https://wa.me/{{ $dashboard->whatsapp }}">
-                        <img src="{{ asset('frontend/img/icon/icon-whatsapp.svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/wa(3).svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="p-2">
                     <a href="{{ $dashboard->twitter }}">
-                        <img src="{{ asset('frontend/img/icon/tw fix.svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/icon-twitter.svg') }}" alt="">
                     </a>
                 </div>
             </div>

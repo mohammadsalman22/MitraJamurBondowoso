@@ -169,12 +169,13 @@
     <!-- end services -->
 
     <!-- produk -->
-    <div class="section-produk my-6 position-relative" style="background-image: url('{{ asset('frontend/img/galeri/back-jamur.png') }}');
-                                                                                        background-repeat: no-repeat;
-                                                                                        background-size: cover;
-                                                                                        background-position: center;
-                                                                                        backdrop-filter: blur(5px);
-                                                                                        height:600px;">
+    <div class="section-produk my-6 position-relative"
+        style="background-image: url('{{ asset('frontend/img/galeri/back-jamur.png') }}');
+                                                                                                                            background-repeat: no-repeat;
+                                                                                                                            background-size: cover;
+                                                                                                                            background-position: center;
+                                                                                                                            backdrop-filter: blur(5px);
+                                                                                                                            height:600px;">
         <div class="container">
             <div class="text-center pt-5">
                 <h4 style="font-size: 28px;">Coba Produk Unggulan Kami</h4>
@@ -234,7 +235,7 @@
                                         bahkan menjadi mitra kami</p>
                                 </div>
                                 <div class="col-md-4 d-flex align-items-center">
-                                    <a href="" class="btn btn-primary"> Hubungi Kami </a>
+                                    <a href="{{ route('kontak') }}" class="btn btn-primary"> Hubungi Kami </a>
                                 </div>
                             </div>
                         </div>
@@ -259,9 +260,8 @@
                                 </div>
                             </div>
                             <div class="col-md-6 align-self-center">
-                                <form action="{{ route('feedback-front') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('feedback-front') }}" method="POST">
                                     @csrf
-
                                     <div class="form-group row">
                                         <div class="col-md-6 mb-4">
                                             <input type="text" placeholder="Nama Depan" id="nama_depan" name="nama_depan"

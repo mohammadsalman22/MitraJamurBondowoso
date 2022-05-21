@@ -24,19 +24,25 @@ use App\Http\Controllers\Frontend\TentangController as FrontendTentangController
 |
 */
 
-Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
+Route::middleware('visitor')->group(function() {
 
-Route::post('/feedback-front', [FrontendDashboardController::class, 'store'])->name('feedback-front');
+    Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
 
-Route::get('/produk', [FrontendProdukController::class,'index'])->name('produk');
+    Route::post('/feedback-front', [FrontendDashboardController::class, 'store'])->name('feedback-front');
 
-Route::get('/produk/detail-produk/{slug}', [FrontendProdukController::class,'detail'])->name('detail-produk');
+    Route::get('/produk', [FrontendProdukController::class,'index'])->name('produk');
 
-Route::get('/gallery', [FrontendGalleryController::class,'index'])->name('gallery');
+    Route::get('/produk/detail-produk/{slug}', [FrontendProdukController::class,'detail'])->name('detail-produk');
 
-Route::get('/tentang', [FrontendTentangController::class,'index'])->name('tentang');
+    Route::get('/gallery', [FrontendGalleryController::class,'index'])->name('gallery');
 
-Route::get('/kontak', [FrontendKontakController::class,'index'])->name('kontak');
+    Route::get('/tentang', [FrontendTentangController::class,'index'])->name('tentang');
+
+    Route::get('/kontak', [FrontendKontakController::class,'index'])->name('kontak');
+});
+
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('administrator')->group(function () {

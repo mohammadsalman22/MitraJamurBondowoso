@@ -57,7 +57,7 @@
                             <div class="d-flex justify-content-start footer-sosmed">
                                 <div class="d-flex flex-column">
                                     <div class="mb-3">
-                                        <a href="tel+:{{ $dashboard->whatsapp }}">
+                                        <a href="tel:+{{ $dashboard->whatsapp }}">
                                             <i class="fa-solid fa-phone"></i> <span
                                                 class="px-2">+{{ $dashboard->whatsapp }}</span>
                                         </a>
