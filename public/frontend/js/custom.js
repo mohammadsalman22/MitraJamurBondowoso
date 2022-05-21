@@ -18,22 +18,27 @@ const swiperBanner = new Swiper('.swiperBanner', {
             spacebetween:10,
         }
     },
-  
+
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
     },
-  
+
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
+
     // And if we need scrollbar
     scrollbar: {
       el: '.swiper-scrollbar',
     },
+
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
 });
 // end swiper
 // swiper
@@ -60,6 +65,7 @@ const swiperGaleri = new Swiper('.swiperGaleri', {
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable: true
   },
 
   // Navigation arrows
@@ -72,6 +78,11 @@ const swiperGaleri = new Swiper('.swiperGaleri', {
   scrollbar: {
     el: '.swiper-scrollbar',
   },
+
+  autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
 });
 
 // galeri
