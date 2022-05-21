@@ -48,7 +48,7 @@ class DashboardController extends Controller
             [
                 'nama_depan' => 'required',
                 'nama_belakang' => 'required',
-                'saran' => 'required|min:10',
+                'saran' => 'required',
                 'email' => 'required',
 
             ],
