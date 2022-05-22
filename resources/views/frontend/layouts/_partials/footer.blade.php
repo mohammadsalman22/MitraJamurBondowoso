@@ -11,7 +11,7 @@
             <div class="d-flex justify-content-center">
                 <div class="p-2">
                     <a href="{{ $dashboard->instagram }}">
-                        <img src="{{ asset('frontend/img/icon/icon-ig.svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/instagram.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
@@ -21,12 +21,12 @@
                 </div>
                 <div class="p-2">
                     <a href="{{ $dashboard->facebook }}">
-                        <img src="{{ asset('frontend/img/icon/fb.svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/facebook.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">
                     <a href="https://wa.me/{{ $dashboard->whatsapp }}">
-                        <img src="{{ asset('frontend/img/icon/wa(3).svg') }}" alt="">
+                        <img src="{{ asset('frontend/img/icon/whatsapp.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="p-2">

@@ -88,8 +88,8 @@
                                     alt="">
                             </div>
                             <div class="text-center my-4">
-                                <h5>Jamur Hias</h5>
-                                <p>Menyediakan Jasa Pembuatan Aplikasi Android agar bisnis anda lebih Efisien</p>
+                                <h5>Jamur Konsumsi</h5>
+                                <p>Menyediakan Produk Jamur Tiram Putih Siap Konsumsi</p>
                             </div>
                         </div>
                     </div>
@@ -98,13 +98,11 @@
                     <div class="card shadow p-3 mb-5 bg-body rounded" style="border: none;">
                         <div class="card-body">
                             <div class="d-flex justify-content-center">
-                                <img src="{{ asset('frontend/img/icon/icon-food.svg') }}" class="img-fluid w-25" alt="">
+                                <img src="{{ asset('frontend/img/icon/icon-jamur.svg') }}" class="img-fluid w-25" alt="">
                             </div>
                             <div class="text-center my-4">
-                                <h5>Jamur Konsumsi</h5>
-                                <p>Menyediakan Jasa
-                                    Pembuatan Website agar
-                                    bisnis anda lebih Profesional</p>
+                                <h5>Jamur Hias</h5>
+                                <p>Menyediakan Produk Jamur Sebagai Hiasan yang Indah</p>
                             </div>
                         </div>
                     </div>
@@ -117,7 +115,7 @@
                             </div>
                             <div class="text-center my-4">
                                 <h5>Mitra Jamur</h5>
-                                <p>Menyediakan Jasa Desain UI/UX Agar Aplikasi Bisnis Kalian Semakin Menarik</p>
+                                <p>Menyediakan Kerja Sama (Mitra) dalam Produksi Jamur</p>
                             </div>
                         </div>
                     </div>
@@ -126,11 +124,12 @@
                     <div class="card shadow p-3 mb-5 bg-body rounded" style="border: none;">
                         <div class="card-body">
                             <div class="d-flex justify-content-center">
-                                <img src="{{ asset('frontend/img/icon/icon-free.svg') }}" class="img-fluid w-25" alt="">
+                                <img src="{{ asset('frontend/img/icon/icon-free.svg') }}" class=""
+                                    height="72px" alt="">
                             </div>
                             <div class="text-center my-4">
                                 <h5>Free Ongkir</h5>
-                                <p>Menyediakan Jasa Pembuatan Logo dan 3D Model yang menarik Mata</p>
+                                <p>Gratis Ongkos Kirim Se-Kabupaten Bondowoso</p>
                             </div>
                         </div>
                     </div>
@@ -144,7 +143,7 @@
                             </div>
                             <div class="text-center my-4">
                                 <h5>Log Jamur</h5>
-                                <p>Menyediakan Jasa Pembuatan Video atau Edit Sesuai Keinginan</p>
+                                <p>Menyediakan Produk Log Jamur (Tahap Produksi)</p>
                             </div>
                         </div>
                     </div>
@@ -158,7 +157,7 @@
                             </div>
                             <div class="text-center my-4">
                                 <h5>Alat Produksi</h5>
-                                <p>MMenerima Jasa Konsultasi Di Bidang Teknologi Dari Software Maupun Hardware</p>
+                                <p>Menyediakan Alat Produksi Jamur Siap Konsumsi</p>
                             </div>
                         </div>
                     </div>
@@ -171,11 +170,11 @@
     <!-- produk -->
     <div class="section-produk my-6 position-relative"
         style="background-image: url('{{ asset('frontend/img/galeri/back-jamur.png') }}');
-                                                                                                                            background-repeat: no-repeat;
-                                                                                                                            background-size: cover;
-                                                                                                                            background-position: center;
-                                                                                                                            backdrop-filter: blur(5px);
-                                                                                                                            height:600px;">
+                                                                                                                                                                            background-repeat: no-repeat;
+                                                                                                                                                                            background-size: cover;
+                                                                                                                                                                            background-position: center;
+                                                                                                                                                                            backdrop-filter: blur(5px);
+                                                                                                                                                                            height:600px;">
         <div class="container">
             <div class="text-center pt-5">
                 <h4 style="font-size: 28px;">Coba Produk Unggulan Kami</h4>
