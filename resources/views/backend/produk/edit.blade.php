@@ -70,6 +70,22 @@
                                         </div>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select class="form-select mb-3" name="status" id="status"
+                                        class="form-control @error('status') is-invalid @enderror">
+                                        <option value="Tersedia" @if (old('type', $produk->status) === 'Tersedia') selected @endif>Tersedia
+                                        </option>
+                                        <option value="Tidak Tersedia" @if (old('type', $produk->status) === 'Tidak Tersedia') selected @endif>
+                                            Tidak Tersedia
+                                        </option>
+                                    </select>
+                                    @error('status')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
                                 <input type="submit" value="simpan" class="btn btn-primary"></td>
                             </form>
                         </div>

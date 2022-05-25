@@ -44,15 +44,15 @@ class FeedbackController extends Controller
     {
         $this->validate($request,
         [
-                'nama_depan' => 'required|max:50',
-                'nama_belakang' => 'required|max:50',
-                'saran' => 'required|max:50',
-                'email' => 'required|max:50',
+                'nama_depan' => 'required',
+                'nama_belakang' => 'required',
+                'saran' => 'required',
+                'email' => 'required',
 
             ],
             [
                 'required' => ':attribute harap diisi.',
-                'max' => ':attribute tidak boleh lebih dari 50 karakter',
+                'min' => ':attribute tidak boleh lebih dari 10 karakter',
             ],
             [
                 'nama_depan' => 'Nama Depan',

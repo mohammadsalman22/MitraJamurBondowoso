@@ -3,7 +3,7 @@
         <a class="navbar-brand d-flex mx-5" href="{{ route('dashboard') }}">
             <img src="{{ asset('frontend/img/logo.png') }}" class="img-fluid d-inline-block align-self-center" alt=""
                 width="150" height="150">
-            <strong>Jamur <br> Tiram <br> Putih</strong>
+            <strong>Mitra <br> Jamur <br> Bondowoso</strong>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

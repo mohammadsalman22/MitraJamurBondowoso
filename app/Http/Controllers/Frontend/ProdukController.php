@@ -21,7 +21,7 @@ class ProdukController extends Controller
 
     public function detail($slug)
     {
-        $this->param['produk'] = Produk::select('produk.id_produk', 'produk.nama', 'produk.harga', 'produk.gambar','produk.deskripsi', 'produk.kategori', 'produk.slug')->where('produk.slug', $slug)->first();
+        $this->param['produk'] = Produk::select('produk.id_produk', 'produk.nama', 'produk.harga', 'produk.gambar','produk.deskripsi', 'produk.kategori', 'produk.slug', 'produk.status')->where('produk.slug', $slug)->first();
         $this->param['oproduk'] = Produk::inRandomOrder()->limit(3)->get();
         $this->param['gallery'] = Gallery::all();
         $this->param['dashboard'] = Dashboard::first();

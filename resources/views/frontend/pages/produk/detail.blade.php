@@ -22,15 +22,25 @@
                 <div class="col-md-6 col-xl-6">
                     <div class="card">
                         <div class="card-body shadow-sm p-3 mb-5 bg-body rounded">
+                            @if ($produk->status == 'Tersedia')
+                                <span class="badge bg-info">Tersedia</span>
+                            @else
+                                <span class="badge bg-danger">Tidak Tersedia</span>
+                            @endif
                             <h5>{{ $produk->nama }}</h4>
                                 <p>{{ $produk->deskripsi }}</p>
                                 <div class="d-flex">
                                     <p class="px-2">Rp </p>
                                     <h4> {{ $produk->harga }}/Log</h4>
-
                                 </div>
-                                <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}&text=Halo%2C%20Cak%20Syair%0ASaya%20Tertarik%20Dengan%20Produk%20{{ $produk->nama }}"
-                                    class="btn btn-success w-100 my-5">Pesan sekarang</a>
+                                @if ($produk->status == 'Tersedia')
+                                    <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}&text=Halo%2C%20Cak%20Syair%0ASaya%20Tertarik%20Dengan%20Produk%20{{ $produk->nama }}"
+                                        class="btn btn-success w-100 my-5">Pesan sekarang</a>
+                                @else
+                                    <button disabled="disabled" class="btn btn-danger w-100 my-5">Tidak bisa pesan
+                                        sekarang</button>
+                                @endif
+
                         </div>
                     </div>
                 </div>
@@ -63,7 +73,6 @@
                                             </div>
                                             <img class=" img-fluid" src="{{ url('' . $item->gambar) }}"
                                                 alt="card image">
-                                            <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
                                             <a href="{{ url('produk/detail-produk/' . $item->slug) }}"
                                                 class="btn btn-primary mt-4 text-white">Lihat
                                                 produk</a>

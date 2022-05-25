@@ -28,7 +28,7 @@ Route::middleware('visitor')->group(function() {
 
     Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
 
-    Route::post('/feedback-front', [FrontendDashboardController::class, 'store'])->name('feedback-front');
+    Route::post('/', [FrontendDashboardController::class, 'store'])->name('feedback-front');
 
     Route::get('/produk', [FrontendProdukController::class,'index'])->name('produk');
 

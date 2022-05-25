@@ -30,6 +30,7 @@
                                             <th>Gambar Produk</th>
                                             <th>Deskripsi Produk</th>
                                             <th>Kategori</th>
+                                            <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -50,6 +51,7 @@
                                                 </td>
                                                 <td>{{ $item->deskripsi }}</td>
                                                 <td> {{ $item->kategori }} </td>
+                                                <td> {{ $item->status }}</td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <div>

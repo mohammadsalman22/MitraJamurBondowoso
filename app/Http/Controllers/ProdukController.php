@@ -48,6 +48,7 @@ class ProdukController extends Controller
             'gambar'=>'required',
             'deskripsi'=>'required',
             'kategori'=>'required|not_in:0',
+            'status'=>'required|not_in:0',
         ],
         [
             'required' => 'Harap isi :attribute',
@@ -59,7 +60,8 @@ class ProdukController extends Controller
             'harga' => 'Harga Produk',
             'gambar' => 'Gambar Produk',
             'deskripsi' => 'Deskripsi Produk',
-            'kategori' => 'Kategori Produk'
+            'kategori' => 'Kategori Produk',
+            'status' => 'Status Produk'
         ]
         );
         try{
@@ -68,6 +70,7 @@ class ProdukController extends Controller
                 'harga' => $request->get('harga'),
                 'deskripsi' => $request->get('deskripsi'),
                 'kategori' => $request->get('kategori'),
+                'status' => $request->get('status'),
                 'slug' => Str::slug($request->get('nama'))
             );
             $lastId = DB::table('produk')->insertGetId($data, 'id_produk');
@@ -141,6 +144,7 @@ class ProdukController extends Controller
             'harga' => $request->get('harga'),
             'deskripsi' => $request->get('deskripsi'),
             'kategori' => $request->get('kategori'),
+            'status' => $request->get('status'),
             'slug' => Str::slug($request->get('nama'))
         ]);
             if($request->file('gambar') != null) {

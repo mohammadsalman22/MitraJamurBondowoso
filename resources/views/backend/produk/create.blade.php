@@ -60,6 +60,14 @@
                                         <option value="Produk Olahan">Produk Olahan</option>
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select class="form-select mb-3" id="status" name="status">
+                                        <option selected value="0">Pilih Status</option>
+                                        <option value="Tersedia">Tersedia</option>
+                                        <option value="Tidak Tersedia">Tidak Tersedia</option>
+                                    </select>
+                                </div>
                                 <input type="submit" value="simpan" class="btn btn-primary"></td>
                             </form>
                         </div>
