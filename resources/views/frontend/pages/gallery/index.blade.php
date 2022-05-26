@@ -9,8 +9,7 @@
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="produk-heading-dua text-center">
-                        <h6>Apa Pendapatmu Tentang Gambar Dibawah Ini ? <br>
-                            Ya itu Semua Tentang Kami</h6>
+                        <h6>Dokumentasi Kegiatan Mitra Jamur Bondowoso</h6>
                     </div>
                 </div>
             </div>

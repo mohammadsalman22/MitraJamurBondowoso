@@ -9,7 +9,8 @@
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="produk-heading-dua text-center">
-                        <h6>Kami besar dengan kepercayaan pelanggan dan Kami <br> Tumbuh untuk Kepuasan Pelanggan</h6>
+                        <h6>Jamur Tiram Bondowoso <br> Besar dengan Kepercayaan Pelanggan <br> Tumbuh untuk Kepuasan
+                            Pelanggan </h6>
                     </div>
                 </div>
             </div>
