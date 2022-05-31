@@ -335,10 +335,13 @@ p{
 }
 
 .frontside .card .card-body img {
-    width: 100%;
-    width: 80%;
-    height: max-content;
+    width: 290px;
+    height: 145px;
+}
 
+.backside .card .card-body img {
+    width: 325px;
+    height: 165px;
 }
 
 /* end produk */
