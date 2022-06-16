@@ -170,11 +170,11 @@
     <!-- produk -->
     <div class="section-produk my-6 position-relative"
         style="background-image: url('{{ asset('frontend/img/galeri/back-jamur.png') }}');
-                                                                                                                                                                                                background-repeat: no-repeat;
-                                                                                                                                                                                                background-size: cover;
-                                                                                                                                                                                                background-position: center;
-                                                                                                                                                                                                backdrop-filter: blur(5px);
-                                                                                                                                                                                                height:600px;">
+                                                                                                                                                                                                                        background-repeat: no-repeat;
+                                                                                                                                                                                                                        background-size: cover;
+                                                                                                                                                                                                                        background-position: center;
+                                                                                                                                                                                                                        backdrop-filter: blur(5px);
+                                                                                                                                                                                                                        height:600px;">
         <div class="container">
             <div class="text-center pt-5">
                 <h4 style="font-size: 28px;">Coba Produk Unggulan Kami</h4>
@@ -245,17 +245,6 @@
     </section>
     <!-- end contact  -->
 
-    @if ($errors->any())
-        <div class=" alert alert-danger">
-            <strong>Whoops!</strong> Terdapat kesalahan pada input anda.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li> {{ $error }} </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <!-- saran -->
     <section class="section-saran my-6">
         <div class="container">
@@ -288,15 +277,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="form-group mb-4">
-                                        <input type="email" placeholder="Email anda" id="email" name="email"
-                                            class="form-control" required>
-                                        @error('email')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Saran" id="saran" name="saran" cols="30" rows="10" required></textarea>
+                                        <textarea class="form-control" placeholder="Saran" id="saran" name="saran" cols="30" rows="10" maxlength="225"
+                                            required></textarea>
                                         @error('saran')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -314,7 +297,7 @@
     </section>
     <!-- end saran -->
     <div class="container-fluid d-flex justify-content-end fixed-bottom p-4 whatsapp">
-        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" class="btn btn-success"><i
-                class="fab fa-whatsapp"></i></a>
+        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" target="_blank"
+            class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
     </div>
 @endsection

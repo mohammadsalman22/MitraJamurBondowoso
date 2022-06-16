@@ -5,7 +5,8 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.0|^8.0",
+        "askedio/laravel5-profanity-filter": "^1.10",
         "awssat/laravel-visits": "^3.0",
         "cviebrock/eloquent-sluggable": "^8.0",
         "doctrine/dbal": "^3.3",

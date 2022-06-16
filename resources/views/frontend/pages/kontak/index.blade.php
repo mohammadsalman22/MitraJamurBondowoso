@@ -57,49 +57,49 @@
                             <div class="d-flex justify-content-start footer-sosmed">
                                 <div class="d-flex flex-column">
                                     <div class="mb-3">
-                                        <a href="tel:+{{ $dashboard->whatsapp }}">
+                                        <a href="tel:+{{ $dashboard->whatsapp }}" target="_blank">
                                             <i class="fa-solid fa-phone"></i> <span
                                                 class="px-2">+{{ $dashboard->whatsapp }}</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="mail:to{{ $dashboard->gmail }}">
+                                        <a href="mailto:{{ $dashboard->gmail }}" target="_blank">
                                             <i class="fa-solid fa-envelope"></i> <span
                                                 class="px-2">{{ $dashboard->gmail }}</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="https://goo.gl/maps/DwHwTDkdvjTWxAHa9">
+                                        <a href="https://goo.gl/maps/DwHwTDkdvjTWxAHa9" target="_blank">
                                             <i class="fa-solid fa-location-dot"></i> <span
                                                 class="px-2">Bondowoso</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="https://wa.me/{{ $dashboard->whatsapp }}">
+                                        <a href="https://wa.me/{{ $dashboard->whatsapp }}" target="_blank">
                                             <i class="fa-brands fa-whatsapp"></i> <span
                                                 class="px-2">+{{ $dashboard->whatsapp }}</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="{{ $dashboard->facebook }}">
+                                        <a href="{{ $dashboard->facebook }}" target="_blank">
                                             <i class="fa-brands fa-facebook-f"></i> <span class="px-2">Mitra Jamur
                                                 Bondowoso</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="{{ $dashboard->youtube }}">
+                                        <a href="{{ $dashboard->youtube }}" target="_blank">
                                             <i class="fa-brands fa-youtube"></i> <span class="px-2">Jamur Ijen
                                                 Raung</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="{{ $dashboard->twitter }}">
+                                        <a href="{{ $dashboard->twitter }}" target="_blank">
                                             <i class="fa-brands fa-twitter"></i> <span class="px-2">Syair
                                                 Vinci</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="{{ $dashboard->instagram }}">
+                                        <a href="{{ $dashboard->instagram }}" target="_blank">
                                             <i class="fa-brands fa-instagram"></i> <span class="px-2">Syair De
                                                 Vinci</span>
                                         </a>

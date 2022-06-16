@@ -8,7 +8,7 @@ use App\Models\Dashboard;
 use App\Models\Gallery;
 use App\Models\Feedback;
 use App\Models\Post;
-
+use Askedio\Laravel5ProfanityFilter\ProfanityFilter;
 
 class DashboardController extends Controller
 {
@@ -43,39 +43,35 @@ class DashboardController extends Controller
 
     public function store(Request $request)
     {
-        // return $request;
         $this->validate($request,
             [
                 'nama_depan' => 'required',
                 'nama_belakang' => 'required',
-                'saran' => 'required',
-                'email' => 'required',
+                'saran' => 'required|max:255|profanity',
 
             ],
             [
                 'required' => ':attribute harap diisi.',
-                'min' => ':attribute tidak boleh lebih dari 10 karakter',
+                'max' => ':attribute tidak boleh lebih dari 255 karakter',
+                'profanity' => ':attribute tidak boleh kata kotor',
             ],
             [
                 'nama_depan' => 'Nama Depan',
                 'nama_belakang' => 'Nama Belakang',
                 'saran' => 'Saran',
-                'email' => 'Email'
 
             ]
         );
 
-
-
         try {
+
             $newFeedback = new Feedback;
             $newFeedback->nama_depan = $request->nama_depan;
             $newFeedback->nama_belakang = $request->nama_belakang;
             $newFeedback->saran = $request->saran;
-            $newFeedback->email = $request->email;
             $newFeedback->save();
 
-            return redirect('/')->withStatus('Berhasil menyimpan data.');
+            return redirect()->back()->with('message', 'Berhasil Mengirim Saran');
         }
         catch(\Exception $e){
             return $e->getMessage();
@@ -85,6 +81,5 @@ class DashboardController extends Controller
             return $e->getMessage();
             return redirect()->back()->withError($e->getMessage());
         }
-
     }
 }

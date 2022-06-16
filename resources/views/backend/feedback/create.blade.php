@@ -50,14 +50,6 @@
                                     <textarea type="text" class="form-control mb-3" rows="2" id="saran" name="saran"
                                         placeholder="Masukkan Saran"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control mb-3" id="email" placeholder="Masukkan Email"
-                                        name="email">
-                                    @error('email')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
                                 <input type="submit" value="simpan" class="btn btn-primary"></td>
                             </form>
                         </div>

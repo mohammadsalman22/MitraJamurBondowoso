@@ -35,7 +35,7 @@
                                 </div>
                                 @if ($produk->status == 'Tersedia')
                                     <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}&text=Halo%2C%20Cak%20Syair%0ASaya%20Tertarik%20Dengan%20Produk%20{{ $produk->nama }}"
-                                        class="btn btn-success w-100 my-5">Pesan sekarang</a>
+                                        target="_blank" class="btn btn-success w-100 my-5">Pesan sekarang</a>
                                 @else
                                     <button disabled="disabled" class="btn btn-danger w-100 my-5">Tidak bisa pesan
                                         sekarang</button>
@@ -90,7 +90,7 @@
     <!-- end produk -->
 
     <div class="container-fluid d-flex justify-content-end fixed-bottom p-4 whatsapp">
-        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" class="btn btn-success"><i
-                class="fab fa-whatsapp"></i></a>
+        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" target="_blank"
+            class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
     </div>
 @endsection

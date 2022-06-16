@@ -47,8 +47,6 @@ class FeedbackController extends Controller
                 'nama_depan' => 'required',
                 'nama_belakang' => 'required',
                 'saran' => 'required',
-                'email' => 'required',
-
             ],
             [
                 'required' => ':attribute harap diisi.',
@@ -58,8 +56,6 @@ class FeedbackController extends Controller
                 'nama_depan' => 'Nama Depan',
                 'nama_belakang' => 'Nama Belakang',
                 'saran' => 'Saran',
-                'email' => 'Email'
-
             ]
         );
 
@@ -68,7 +64,6 @@ class FeedbackController extends Controller
             $newFeedback->nama_depan = $request->nama_depan;
             $newFeedback->nama_belakang = $request->nama_belakang;
             $newFeedback->saran = $request->saran;
-            $newFeedback->email = $request->email;
 
             $newFeedback->save();
 

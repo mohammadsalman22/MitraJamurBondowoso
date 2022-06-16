@@ -28,7 +28,6 @@
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>Saran</th>
-                                            <th>Email</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -38,7 +37,6 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->nama_depan . ' ' . $item->nama_belakang }}</td>
                                                 <td>{{ $item->saran }}</td>
-                                                <td> {{ $item->email }} </td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <form action="{{ route('feedback.destroy', $item->id_feedback) }}"
@@ -52,19 +50,17 @@
                                                                 <span class="align-middle"></span>
                                                             </button>
                                                         </form>
-
                                                     </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
-                            </td>
-                            </tr>
-                            @endforeach
-                            </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 @endsection
