@@ -31,7 +31,7 @@
                                 <p>{{ $produk->deskripsi }}</p>
                                 <div class="d-flex">
                                     <p class="px-2">Rp </p>
-                                    <h4> {{ $produk->harga }}/Log</h4>
+                                    <h4> {{ $produk->harga }}/Pcs</h4>
                                 </div>
                                 @if ($produk->status == 'Tersedia')
                                     <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}&text=Halo%2C%20Cak%20Syair%0ASaya%20Tertarik%20Dengan%20Produk%20{{ $produk->nama }}"
@@ -60,8 +60,7 @@
                                     <div class="card shadow p-3 mb-5 bg-body rounded">
                                         <div class="card-body text-center">
                                             <h5 class="card-title">{{ $item->nama }}</h5>
-                                            <img class=" img-fluid" src="{{ url('' . $item->gambar) }}"
-                                                alt="card image">
+                                            <img class=" img-fluid" src="{{ url('' . $item->gambar) }}" alt="card image">
                                         </div>
                                     </div>
                                 </div>
@@ -71,8 +70,7 @@
                                             <div class="bg-light p-2 mb-3">
                                                 <h5 class="card-title">{{ $item->nama }}</h5>
                                             </div>
-                                            <img class=" img-fluid" src="{{ url('' . $item->gambar) }}"
-                                                alt="card image">
+                                            <img class=" img-fluid" src="{{ url('' . $item->gambar) }}" alt="card image">
                                             <a href="{{ url('produk/detail-produk/' . $item->slug) }}"
                                                 class="btn btn-primary mt-4 text-white">Lihat
                                                 produk</a>
