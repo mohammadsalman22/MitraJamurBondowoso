@@ -6,6 +6,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FirstClickController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Frontend\DashboardController as FrontendDashboardController;
 use App\Http\Controllers\Frontend\GalleryController as FrontendGalleryController;
@@ -24,7 +25,24 @@ use App\Http\Controllers\Frontend\TentangController as FrontendTentangController
 |
 */
 
+    Route::post('first-click', [FirstClickController::class, 'save'])->name('test.post');
+
+    Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
+
+    Route::post('/', [FrontendDashboardController::class, 'store'])->name('feedback-front');
+
+    Route::get('/produk', [FrontendProdukController::class,'index'])->name('produk');
+
+    Route::get('/produk/detail-produk/{slug}', [FrontendProdukController::class,'detail'])->name('detail-produk');
+
+    Route::get('/gallery', [FrontendGalleryController::class,'index'])->name('gallery');
+
+    Route::get('/tentang', [FrontendTentangController::class,'index'])->name('tentang');
+
+    Route::get('/kontak', [FrontendKontakController::class,'index'])->name('kontak');
+
 Route::middleware('visitor')->group(function() {
+    Route::post('first-click', [FirstClickController::class, 'save'])->name('test.post');
 
     Route::get('/', [FrontendDashboardController::class,'index'])->name('dashboard');
 

@@ -25,6 +25,7 @@
     </div>
 
     <script src="{{ asset('backend/js/app.js') }}"></script>
+    @stack('js')
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {

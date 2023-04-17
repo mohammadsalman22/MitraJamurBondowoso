@@ -1,4 +1,35 @@
 @extends('frontend.layouts.template')
+@push('js')
+    <script>
+        // Add event listener to the document for a click event
+        document.addEventListener('click', function(event) {
+            // Mendapatkan koordinat x dan y
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // log koordinat ke konsol
+            // simpan data disini
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('test.post') }}",
+                data: {
+                    id_menu: 5,
+                    sumbu_x: x,
+                    sumbu_y: y,
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+
+        });
+    </script>
+@endpush
 @section('frontend.content')
     <!-- produk -->
     <div class="section-produk">
@@ -70,8 +101,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <a href="https://goo.gl/maps/DwHwTDkdvjTWxAHa9" target="_blank">
-                                            <i class="fa-solid fa-location-dot"></i> <span
-                                                class="px-2">Bondowoso</span>
+                                            <i class="fa-solid fa-location-dot"></i> <span class="px-2">Bondowoso</span>
                                         </a>
                                     </div>
                                     <div class="mb-3">

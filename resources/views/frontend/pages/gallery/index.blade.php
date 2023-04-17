@@ -1,4 +1,35 @@
 @extends('frontend.layouts.template')
+@push('js')
+    <script>
+        // Add event listener to the document for a click event
+        document.addEventListener('click', function(event) {
+            // Mendapatkan koordinat x dan y
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // log koordinat ke konsol
+            // simpan data disini
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('test.post') }}",
+                data: {
+                    id_menu: 3,
+                    sumbu_x: x,
+                    sumbu_y: y,
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+
+        });
+    </script>
+@endpush
 @section('frontend.content')
     <!-- galeri -->
     <div class="section-produk ">
@@ -31,7 +62,7 @@
     <!-- end galeri -->
 
     <div class="container-fluid d-flex justify-content-end fixed-bottom p-4 whatsapp">
-        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" target="_blank"
-            class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://api.whatsapp.com/send?phone={{ $dashboard->whatsapp }}" target="_blank" class="btn btn-success"><i
+                class="fab fa-whatsapp"></i></a>
     </div>
 @endsection

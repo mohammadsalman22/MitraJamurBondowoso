@@ -1,4 +1,35 @@
 @extends('frontend.layouts.template')
+@push('js')
+    <script>
+        // Add event listener to the document for a click event
+        document.addEventListener('click', function(event) {
+            // Mendapatkan koordinat x dan y
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // log koordinat ke konsol
+            // simpan data disini
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('test.post') }}",
+                data: {
+                    id_menu: 1,
+                    sumbu_x: x,
+                    sumbu_y: y,
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+
+        });
+    </script>
+@endpush
 @section('frontend.content')
     <!-- slider -->
     <section class="home-slider my-5">
@@ -98,7 +129,8 @@
                     <div class="card shadow p-3 mb-5 bg-body rounded" style="border: none;">
                         <div class="card-body">
                             <div class="d-flex justify-content-center">
-                                <img src="{{ asset('frontend/img/icon/icon-jamur.svg') }}" class="img-fluid w-25" alt="">
+                                <img src="{{ asset('frontend/img/icon/icon-jamur.svg') }}" class="img-fluid w-25"
+                                    alt="">
                             </div>
                             <div class="text-center my-4">
                                 <h5>Jamur Hias</h5>
@@ -111,7 +143,8 @@
                     <div class="card shadow p-3 mb-5 bg-body rounded" style="border: none;">
                         <div class="card-body">
                             <div class="d-flex justify-content-center">
-                                <img src="{{ asset('frontend/img/icon/icon-mitra.svg') }}" class="img-fluid w-25" alt="">
+                                <img src="{{ asset('frontend/img/icon/icon-mitra.svg') }}" class="img-fluid w-25"
+                                    alt="">
                             </div>
                             <div class="text-center my-4">
                                 <h5>Mitra Jamur</h5>
@@ -124,8 +157,8 @@
                     <div class="card shadow p-3 mb-5 bg-body rounded" style="border: none;">
                         <div class="card-body">
                             <div class="d-flex justify-content-center">
-                                <img src="{{ asset('frontend/img/icon/icon-free.svg') }}" class=""
-                                    height="72px" alt="">
+                                <img src="{{ asset('frontend/img/icon/icon-free.svg') }}" class="" height="72px"
+                                    alt="">
                             </div>
                             <div class="text-center my-4">
                                 <h5>Free Ongkir</h5>
@@ -263,8 +296,8 @@
                                     @csrf
                                     <div class="form-group row">
                                         <div class="col-md-6 mb-4">
-                                            <input type="text" placeholder="Nama Depan" id="nama_depan" name="nama_depan"
-                                                class="form-control" required>
+                                            <input type="text" placeholder="Nama Depan" id="nama_depan"
+                                                name="nama_depan" class="form-control" required>
                                             @error('nama_depan')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -278,8 +311,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Saran" id="saran" name="saran" cols="30" rows="10" maxlength="225"
-                                            required></textarea>
+                                        <textarea class="form-control" placeholder="Saran" id="saran" name="saran" cols="30" rows="10"
+                                            maxlength="225" required></textarea>
                                         @error('saran')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

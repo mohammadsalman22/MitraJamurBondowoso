@@ -30,5 +30,6 @@
     baguetteBox.run('.section-galeri');
 </script>
 <script src="{{ asset('frontend/js/custom.js') }}"></script>
+@stack('js')
 
 </html>
